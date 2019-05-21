@@ -14,6 +14,12 @@ const CardWrapper = styled.div`
   width: 100%;
   height: 100%;
   background-color: #e9e7e9;
+
+  ${({ isDark }) =>
+    isDark
+      ? `background-color: #3a393a;
+      `
+      : ''}
 `;
 
 const Weather = () => {
@@ -47,7 +53,7 @@ const Weather = () => {
   const getCelsius = kelvin => (kelvin - 273.15).toFixed(1);
 
   return (
-    <CardWrapper>
+    <CardWrapper isDark={isDark}>
       <CardWeather
         name={weather.name}
         deg={getCelsius(298)}

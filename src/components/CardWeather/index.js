@@ -11,6 +11,12 @@ const StyledWrapper = styled.div`
   background-color: #b3afff;
   border-radius: 6px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  ${({ isDark }) =>
+    isDark
+      ? `background-color: #6e6e93;
+      `
+      : ''}
 `;
 
 const StyledIconsWrapp = styled.div`
@@ -51,7 +57,7 @@ const StyledDegWrapp = styled.div`
 `;
 
 const CardWeather = ({ name, deg, isDark, onClick }) => (
-  <StyledWrapper onClick={onClick}>
+  <StyledWrapper onClick={onClick} isDark={isDark}>
     <StyledIconsWrapp>
       <StyledImg src={cloudy} alt="icons" />
     </StyledIconsWrapp>
